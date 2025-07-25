@@ -1,103 +1,56 @@
-PROJECT=> Asset Tracking & Usage Management System
+## Asset Tracking & Usage Management System
 
-A web-based PHP Yii 1.1 application to manage assets, track assignments, 
-and usage history.
-This is a web-based application built using PHP (Yii 1.1 Framework) that 
-helps organizations to track physical assets like laptops, monitors,and other office equipment, 
-and manage how those assets are assigned and used by employees over time.
+A **web-based asset management system** built using **PHP (Yii 1.1 Framework)** to help organizations efficiently track, assign, and manage physical assets like laptops, monitors, and other office equipment.
 
-It helps answer questions like:
+### Features
 
-Who is using which asset?
+* **Asset Management:** Add, edit, delete, and view assets with asset type categorization.
+* **Employee Management:** Manage employee records and link them with assigned assets.
+* **Asset Usage Tracking:** Assign assets with start/end dates while maintaining complete usage history.
+* **Date Conflict Validation:** Prevents double bookings by validating asset availability.
+* **AJAX Validation:** Checks asset availability instantly while assigning without page reloads.
+* **Forgot Password:** Sends reset password links via Gmail SMTP securely.
+* **Efficient Data Import:** Uses `LOAD DATA INFILE` for bulk data imports into MySQL.
+* **Admin Views:** User-friendly GridView and DetailView for efficient monitoring.
 
-When was it assigned and returned?
+### Tech Stack
 
+* PHP (Yii 1.1)
+* MySQL
+* JavaScript + AJAX
+* HTML, CSS
 
-Features :
+### How to Run Locally
 
-✅ Asset Management Module
-Add new assets (e.g., Laptop #123, Monitor #001)
+1. **Clone the repository:**
 
-Assign asset types (e.g., Laptop, Printer, etc.)
+   ```bash
+   git clone https://github.com/Deepika-0225/asset-tracking-system.git
+   ```
 
-Edit, delete, and view asset details
+2. **Import the database:**
 
-✅ Employee Management
-Add, edit, and manage employee records
+   * Open phpMyAdmin or MySQL CLI.
+   * Import the provided SQL file (e.g., `asset_db.sql`).
 
-Link employees to assigned assets
+3. **Configure the database:**
 
-✅ Asset Usage Tracking
-Assign assets to employees with start date and end date
+   * Open `/protected/config/main.php`.
+   * Update the database settings:
 
-System checks for date conflicts to avoid double bookings
+     ```php
+     'username' => 'root',
+     'password' => '',
+     'dbname' => 'asset_db',
+     ```
 
-Keeps complete usage history
+4. **Run the application:**
 
-✅ Date Validation
-Prevent assigning an asset to someone if it’s already in use
+   * Start XAMPP/WAMP.
+   * Visit:
 
-Allows editing and closing usage records
-
-✅ AJAX Validation
-When selecting asset and date, checks availability instantly using AJAX (no page reload)
-
-✅ Efficient Data Handling
-Uses LOAD DATA INFILE to import large data files quickly into MySQL
-
-Built-in views (GridView, DetailView) for admin to easily view and manage assets
-
-✅ Forgot Password Feature (Gmail SMTP)
-Sends reset password link to user's email
-
-Uses Gmail SMTP for sending secure emails
-
-
-
-Tech Used :
-
-- PHP (Yii 1.1)
-- MySQL
-- JavaScript + AJAX
-- HTML/CSS
-
-How to Run :
-
-1. Clone the project or download ZIP
-2. Import SQL file to your MySQL database
-3. Set DB config in `/protected/config/main.php`
-4. Run in browser 
-
-
-▶️ 6. How to Run This Project (Locally)
-Download or clone the project from GitHub:
-
-git clone https://github.com/YourName/asset-tracking-system.git
-Import the database:
-
-Open phpMyAdmin or MySQL CLI
-
-Import the provided SQL file (e.g., asset_db.sql)
-
-Set database config:
-
-Open: /protected/config/main.php
-
-Edit database settings like:
-
-php
-Copy
-Edit
-'username' => 'root',
-'password' => '',
-'dbname' => 'asset_db',
-Start XAMPP/WAMP and open browser:
-
-url
-Copy
-Edit
-http://localhost/asset-tracking-system/index.php?r=site/login
-Login and start managing assets 
-
-
+     ```
+     http://localhost/asset-tracking-system/index.php?r=site/login
+     ```
+   * Login using your admin credentials and start managing assets.
 
